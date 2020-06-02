@@ -86,3 +86,13 @@ headings.forEach((h) => {
     })
 })
 //End of Text effects
+
+
+//2nd Button Effects
+secondButton.addEventListener('click', () => {
+    secondButton.style['background-color'] = 'hotpink'
+    setTimeout(function() {
+        secondButton.style['background-color'] = ''
+    }, 250)
+})
+//End of 2nd Button effects
