@@ -9,3 +9,17 @@ const vacationBox = document.querySelector('.content-pick')
 const secondButton = document.querySelectorAll('.btn')[1]
 const footer = document.querySelector('footer')
 
+//Functions for Logo effects
+
+function logoWheel(event){
+    logo.style.color = 'pink'
+}
+
+document.addEventListener('wheel', logoWheel)
+
+
+
+
+
+
+
