@@ -14,11 +14,11 @@ const copyright = document.querySelector('footer>p')
 //Page Effects
 const nope = function(event){
     if(event.key === 'Escape'){
-        body.style['background-color'] = 'red'
+        body.style.backgroundColor = 'red'
         alert(`Hey! You can't do that!`)
     }
     setTimeout(function(){
-        body.style['background-color'] = ''
+        body.style.backgroundColor = ''
     }, 500)
 }
 document.addEventListener('keydown', nope)
@@ -37,7 +37,7 @@ document.addEventListener('wheel', logoWheel)
 
 //Nav Effects
 navs.forEach((nav) => {
-    nav.addEventListener('click', () => {
+    nav.addEventListener('click', event => {
         nav.style.color = 'red';
 
         setTimeout(function() {
@@ -50,17 +50,17 @@ navs.forEach((nav) => {
 
 //Img Effects
 imgs.forEach((img) => {
-    img.addEventListener('mouseover', () => {
+    img.addEventListener('mouseover', event => {
         img.style.opacity = '0.5'
     })
-    img.addEventListener('mouseout', () => {
+    img.addEventListener('mouseout', event => {
         img.style.opacity = '0'
         setTimeout(function() {
             img.style.opacity = '1'
         }, 250)
     })
 })
-homeImg.addEventListener('drag', () => {
+homeImg.addEventListener('drag', event => {
     homeImg.style.display = 'none'
     setTimeout(function() {
         homeImg.style.display = ''
@@ -72,16 +72,16 @@ homeImg.addEventListener('drag', () => {
 //Text Effects
 //p to go to 1.4rem on m/o
 contentTxt.forEach((p) => {
-    p.addEventListener('mouseover', () => {
+    p.addEventListener('mouseover', event => {
         p.style['font-size'] = '1.4rem'
     })
-    p.addEventListener('mouseout', () => {
+    p.addEventListener('mouseout', event => {
         p.style['font-size'] = '1.6rem'
     })
 })
 
 headings.forEach((h) => {
-    h.addEventListener('dblclick', () => {
+    h.addEventListener('dblclick', event => {
         h.classList.toggle('toggle')
     })
 })
@@ -89,10 +89,26 @@ headings.forEach((h) => {
 
 
 //2nd Button Effects
-secondButton.addEventListener('click', () => {
-    secondButton.style['background-color'] = 'hotpink'
+secondButton.addEventListener('click', event => {
+    secondButton.style.backgroundColor = 'hotpink'
     setTimeout(function() {
-        secondButton.style['background-color'] = ''
+        secondButton.style.backgroundColor = ''
     }, 250)
 })
 //End of 2nd Button effects
+
+
+//Footer Effects
+footer.addEventListener('mouseover', event => {
+    footer.style.backgroundColor = 'skyblue'
+    setTimeout(function() {
+        footer.style.backgroundColor = ''
+    }, 250)
+})
+copyright.addEventListener('mouseover', event => {
+    copyright.style.color = 'yellow'
+    setTimeout(function() {
+        copyright.style.color = ''
+    }, 250)
+    event.stopPropagation()
+})
