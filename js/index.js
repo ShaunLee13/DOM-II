@@ -7,7 +7,6 @@ const imgs = document.querySelectorAll('img')
 const homeImg = document.querySelector('#home-img')
 const contentTxt = document.querySelectorAll('p')
 const headings = document.querySelectorAll('h2')
-const vacationBox = document.querySelector('.content-pick')
 const secondButton = document.querySelectorAll('.btn')[1]
 const footer = document.querySelector('footer')
 const copyright = document.querySelector('footer>p')
@@ -72,7 +71,6 @@ homeImg.addEventListener('drag', () => {
 
 //Text Effects
 //p to go to 1.4rem on m/o
-
 contentTxt.forEach((p) => {
     p.addEventListener('mouseover', () => {
         p.style['font-size'] = '1.4rem'
@@ -81,3 +79,10 @@ contentTxt.forEach((p) => {
         p.style['font-size'] = '1.6rem'
     })
 })
+
+headings.forEach((h) => {
+    h.addEventListener('dblclick', () => {
+        h.classList.toggle('toggle')
+    })
+})
+//End of Text effects
