@@ -1,5 +1,6 @@
 // Your code goes here
 
+const body = document.querySelector('body')
 const logo = document.querySelector('.logo-heading')
 const navs = document.querySelectorAll('.nav-link')
 const imgs = document.querySelectorAll('img')
@@ -9,6 +10,20 @@ const headings = document.querySelectorAll('h2')
 const vacationBox = document.querySelector('.content-pick')
 const secondButton = document.querySelectorAll('.btn')[1]
 const footer = document.querySelector('footer')
+const copyright = document.querySelector('footer>p')
+
+//Page Effects
+const nope = function(event){
+    if(event.key === 'Escape'){
+        body.style['background-color'] = 'red'
+        alert(`Hey! You can't do that!`)
+    }
+    setTimeout(function(){
+        body.style['background-color'] = ''
+    }, 500)
+}
+document.addEventListener('keydown', nope)
+//End of Page effects
 
 
 //Functions for Logo effects
@@ -40,7 +55,10 @@ imgs.forEach((img) => {
         img.style.opacity = '0.5'
     })
     img.addEventListener('mouseout', () => {
-        img.style.opacity = '1'
+        img.style.opacity = '0'
+        setTimeout(function() {
+            img.style.opacity = '1'
+        }, 250)
     })
 })
 homeImg.addEventListener('drag', () => {
@@ -50,3 +68,16 @@ homeImg.addEventListener('drag', () => {
     }, 4000)
 })
 //End of Img effects
+
+
+//Text Effects
+//p to go to 1.4rem on m/o
+
+contentTxt.forEach((p) => {
+    p.addEventListener('mouseover', () => {
+        p.style['font-size'] = '1.4rem'
+    })
+    p.addEventListener('mouseout', () => {
+        p.style['font-size'] = '1.6rem'
+    })
+})
